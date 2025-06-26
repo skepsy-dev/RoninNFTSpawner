@@ -1,0 +1,33 @@
+# Build settings
+[build]
+  publish = "Build"
+
+# Headers for proper MIME types
+[[headers]]
+  for = "/Build/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Content-Encoding = "gzip"
+
+[[headers]]
+  for = "/Build/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+    Content-Encoding = "gzip"
+
+[[headers]]
+  for = "/Build/*.data"
+  [headers.values]
+    Content-Type = "application/octet-stream"
+    Content-Encoding = "gzip"
+
+[[headers]]
+  for = "/Build/*.br"
+  [headers.values]
+    Content-Encoding = "br"
+
+# Redirect rules for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
