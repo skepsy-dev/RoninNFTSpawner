@@ -1,10 +1,9 @@
 [build]
-  publish = "Build"
+  publish = "."
 
 [[headers]]
-  for = "/Build/*.js.gz"
+  for = "/Build/*.gz"
   [headers.values]
-    Content-Type = "application/javascript"
     Content-Encoding = "gzip"
 
 [[headers]]
@@ -14,17 +13,13 @@
     Content-Encoding = "gzip"
 
 [[headers]]
+  for = "/Build/*.js.gz"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Content-Encoding = "gzip"
+
+[[headers]]
   for = "/Build/*.wasm.gz"
   [headers.values]
     Content-Type = "application/wasm"
     Content-Encoding = "gzip"
-
-[[headers]]
-  for = "/Build/*.js"
-  [headers.values]
-    Content-Type = "application/javascript"
-
-[[headers]]
-  for = "/Build/*.json"
-  [headers.values]
-    Content-Type = "application/json"
